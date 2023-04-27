@@ -1,0 +1,65 @@
+.navList:hover {
+  background-color: #115d94;
+}
+
+.navList {
+  display: inline-block;
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: white;
+  transition-duration: 150ms;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdownList {
+  font-weight: 300;
+  font-size: 1.15rem;
+  color: #115d94;
+  display: block;
+  transition-duration: 150ms;
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+}
+
+.dropdownList:hover {
+  background-color: #115d94;
+  color: white;
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .navList {
+    color: black;
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+  }
+  .navList:hover {
+    color: white;
+    background-color: #115d94;
+  }
+  .dropdownList {
+    font-weight: 300;
+    border-left: solid 1px rgb(191, 209, 231);
+    color: rgb(191, 209, 231);
+    display: inline-block;
+    transition-duration: 150ms;
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0px;
+    margin-left: 0.5rem;
+  }
+  .dropdownList:hover {
+    background-color: rgb(38, 106, 188);
+    color: white;
+    width: 100%;
+    border-end-end-radius: 8px;
+    border-end-start-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 0px;
+  }
+}
