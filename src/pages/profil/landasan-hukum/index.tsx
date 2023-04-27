@@ -3,7 +3,7 @@ import PageLayouts from "@/components/layouts/PageLayouts";
 
 const index = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Landasan Hukum">
       <ContainerLayout
         background
         header={

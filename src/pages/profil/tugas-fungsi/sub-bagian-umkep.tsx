@@ -4,7 +4,7 @@ import React from "react";
 
 const sub_bagian_umkep = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Tugas & Fungsi">
       <ContainerLayout
         background
         header={

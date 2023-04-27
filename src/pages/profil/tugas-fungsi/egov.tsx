@@ -3,7 +3,7 @@ import PageLayouts from "@/components/layouts/PageLayouts";
 
 const egov = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Tugas & Fungsi">
       <ContainerLayout
         background
         header={

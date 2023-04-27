@@ -4,7 +4,7 @@ import React from "react";
 
 const ldikp = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Tugas & Fungsi">
       <ContainerLayout
         background
         header={

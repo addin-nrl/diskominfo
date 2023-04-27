@@ -5,7 +5,7 @@ import struktur from "../../../../public/assets/images/struktur-organisasi.png";
 
 const index = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Struktur">
       <ContainerLayout
         header={
           <>

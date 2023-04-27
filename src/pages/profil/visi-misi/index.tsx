@@ -4,7 +4,7 @@ import React from "react";
 
 const index = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Visi & Misi">
       <ContainerLayout
         header={
           <>

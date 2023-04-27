@@ -16,7 +16,7 @@ const ContainerLayout = (props: ContainerLayoutProps) => {
       </div>
       <div
         className={`${
-          background && "bg-gray-400/10 rounded-2xl space-y-5 text-justify backdrop-blur-md"
+          background && "bg-black/5 rounded-2xl space-y-5 text-justify backdrop-blur-md"
         } m-3 mt-10 text-lg px-10 py-7 z-30 ${className}`}
       >
         {children}

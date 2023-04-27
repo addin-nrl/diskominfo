@@ -3,7 +3,7 @@ import PageLayouts from "@/components/layouts/PageLayouts";
 
 const sdep = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Tugas & Fungsi">
       <ContainerLayout
         background
         header={

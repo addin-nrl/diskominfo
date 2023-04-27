@@ -4,7 +4,7 @@ import React from "react";
 
 const index = (props: any) => {
   return (
-    <PageLayouts>
+    <PageLayouts title="Profil Sejarah">
       <ContainerLayout
         background
         header={

@@ -22,7 +22,7 @@ const Index = (props: any) => {
   }, [counter]);
 
   return (
-    <PageLayouts>
+    <PageLayouts title="Profil Pegawai">
       <ContainerLayout
         header={
           <>
