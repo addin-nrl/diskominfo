@@ -8,7 +8,7 @@ const egov = (props: any) => {
         header={
           <>
             <h2>tugas dan fungsi</h2>
-            <h2>bidang layanan e-government</h2>
+            <h2>Bidang layanan E-Government</h2>
           </>
         }
       >
