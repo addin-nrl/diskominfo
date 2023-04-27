@@ -16,25 +16,19 @@ const NavlistSmall = (props: NavlistSmallProps) => {
     }
   }, [navState]);
 
-  useEffect(() => {
-    console.log(activeNav);
-  }, [activeNav]);
-
   return (
     <div
       className={`w-full ${
-        navState ? "top-[97%] z-20 opacity-100" : "-top-[100vh] -z-50 opacity-0"
-      }  overflow-hidden h-screen bg-transparent grow absolute transition-all`}
+        navState
+          ? "top-[97%] z-[80] h-screen bg-black/50 opacity-100"
+          : "-top-[50vh] h-0 -z-[10] opacity-0"
+      }  overflow-hidden grow absolute transition-all duration-700`}
     >
       <div
-        className={`${
-          navState ? "top-0" : "-top-full"
-        } transition-all duration-500 absolute w-full bg-[#1467A2] pb-3`}
+        className={`transition-all duration-700 absolute w-full -z-20 bg-[#1467A2] pb-3`}
       >
         <ul
-          className={`${
-            navState ? "rounded-tl-lg rounded-bl-lg rounded-br-lg" : ""
-          } md:hidden p-1 justify-center flex flex-col mx-2 bg-white text-black`}
+          className={`rounded-tl-lg rounded-bl-lg rounded-br-lg md:hidden p-1 justify-center flex flex-col mx-2 bg-white text-black`}
         >
           <li>
             <Link href={"/"} className={navHeader.navList}>

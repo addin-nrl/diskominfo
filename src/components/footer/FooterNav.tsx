@@ -18,7 +18,7 @@ const FooterNav = (props: any) => {
           ></iframe>
         </FooterComponent>
         <FooterComponent className="cursor-pointer" title="Pengunjung">
-          <div className="rounded-lg flex border h-full shadow-lg text-center text-white bg-blue-600 items-center justify-center gap-5 font-semibold text-2xl">
+          <div className="rounded-lg flex border h-full shadow-lg text-center text-white bg-[#1467A2] items-center justify-center gap-5 font-semibold text-2xl">
             <div>
               <p>152</p>
               <h4 className="text-xl font-normal">Hari Ini</h4>
