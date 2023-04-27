@@ -5,6 +5,7 @@ const egov = (props: any) => {
   return (
     <PageLayouts>
       <ContainerLayout
+        background
         header={
           <>
             <h2>tugas dan fungsi</h2>

@@ -6,6 +6,7 @@ const diskominfo = (props: any) => {
   return (
     <PageLayouts>
       <ContainerLayout
+        background
         header={
           <>
             <h2>Tugas dan fungsi</h2>
