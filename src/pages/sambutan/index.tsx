@@ -6,6 +6,7 @@ const index = (props: any) => {
   return (
     <PageLayouts title="Sambutan Kadis">
       <ContainerLayout
+        background
         header={
           <>
             <h2>Sambutan kepala dinas</h2>
@@ -17,13 +18,11 @@ const index = (props: any) => {
           Assalamu{"'"}alaikum Wr. Wb., salam sejahtera, salam kebajikan,
           homsuatiyastu, namebudaye.
         </p>
-
         <p>
           Puji syukur kita panjatkan kepada Tuhan Yang Maha Esa, yang dengan
           rahmatNya telah mengantarkan kita kepada era disruptif, era dimana
           semakin pesat perkembangan arus informasi dan pemanfaatan teknologi.
         </p>
-
         <p>
           Diskominfo Kota Serang dalam mendukung visi dan misi Kota Serang
           menjadi kota pintar yang berbasis kepada pemanfaatan teknologi serta
@@ -33,7 +32,6 @@ const index = (props: any) => {
           Yang siap menjamin transparansi, efisiensi dan efektivitas melalui
           Teknologi Informasi dan Komunikasi (TIK).
         </p>
-
         <p>
           Panduan-panduan pengembangan Teknologi Informatika di dalam bidang
           Kepemerintahan sudah di rumuskan oleh Pemerintah Pusat melalui
@@ -48,7 +46,6 @@ const index = (props: any) => {
           lagi perlunya pengembangan Teknologi Informasi di lingkungan
           Pemerintah Kota Serang.
         </p>
-
         <p>
           Kini Dinas Komunikasi dan Informatika siap menjawab tantangan zaman
           dengan keberadaan portal Pemerintah Kota Serang merupakan wujud dari
@@ -61,7 +58,7 @@ const index = (props: any) => {
           baik perangkat daerah dilingkungan pemerintah Kota Serang, maupun
           pihak lain yang membutuhkan informasi tentang Diskominfo.
         </p>
-        <p>Tertanda</p>
+        <p>Tertanda,</p>
         <p>Kepala Dinas Komunikasi dan Informatika Kota Serang</p>
         <p>ARIF RAHMAN HAKIM, S.Sos., M.Si</p>
       </ContainerLayout>

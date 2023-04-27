@@ -23,7 +23,7 @@ const aplikasiCarousel: AplikasiCarousel[] = [
   {
     title: "Info Sembako",
     link: "/",
-    image: "/assets/aplikasi/call-112.svg",
+    image: "/assets/aplikasi/info-sembako.svg",
   },
   {
     title: "jdih kora serang",

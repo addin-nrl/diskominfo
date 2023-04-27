@@ -95,12 +95,6 @@ const NavlistLarge = (props: any) => {
               <Link href={"/profil/pegawai"} className={navHeader.dropdownList}>
                 Profil Pegawai
               </Link>
-              <Link
-                href={"/profil/layanan-egov"}
-                className={navHeader.dropdownList}
-              >
-                Bidang layanan E-Goverment
-              </Link>
             </ul>
           </Dropdown>
         </div>
