@@ -18,7 +18,7 @@ const NavHeader = (props: any) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="flex pl-10 gap-5 max-w-max justify-end items-center bg-white">
+      <Link href={"/"} className="flex pl-10 gap-5 max-w-max justify-end items-center bg-white">
         <Image
           src={"/assets/images/logo-serang.png"}
           alt="Logo Kota Serang"
@@ -32,7 +32,7 @@ const NavHeader = (props: any) => {
           height={130}
         />
         <div className="w-0 h-0 border-t-[40px] border-t-transparent border-b-[40px] border-b-transparent border-r-[30px] border-[#1467A2]" />
-      </div>
+      </Link>
       <NavlistLarge />
       <div className="justify-center flex flex-wrap gap-2 align-middle items-center">
         <div className="flex gap-2 mx-2 w-full justify-center">
@@ -65,9 +65,9 @@ const NavHeader = (props: any) => {
             onClick={() => setActiveNav((prev: boolean) => !prev)}
             className={`${
               isActiveNav
-                ? "top-3 rounded-tl-lg rounded-tr-lg"
-                : "top-0 rounded-lg"
-            } bg-white text-blue-500 relative z-10 transition-all duration-300 md:hidden h-11 shrink aspect-square flex justify-center items-center`}
+                ? "translate-y-3 rounded-tl-lg rounded-tr-lg"
+                : "translate-y-0 rounded-lg"
+            } bg-white top-0 text-blue-500 relative z-10 transition-all duration-300 md:hidden h-11 shrink aspect-square flex justify-center items-center`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const NavHeader = (props: any) => {
             </svg>
           </div>
         </div>
-        <NavlistSmall navState={isActiveNav} />
+        <NavlistSmall setNavState={(_)=> setActiveNav(_)} navState={isActiveNav} />
       </div>
     </div>
   );

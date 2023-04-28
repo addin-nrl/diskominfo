@@ -4,10 +4,10 @@ import navHeader from "@/styles/NavHeader.module.css";
 
 interface NavlistSmallProps {
   navState: boolean;
+  setNavState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavlistSmall = (props: NavlistSmallProps) => {
-  const { navState } = props;
+const NavlistSmall = ({ navState, setNavState }: NavlistSmallProps) => {
   const [activeNav, setActiveNav] = React.useState<string>("");
 
   useEffect(() => {
@@ -18,16 +18,10 @@ const NavlistSmall = (props: NavlistSmallProps) => {
 
   return (
     <div
-      className={`w-full ${
-        navState
-          ? "top-[97%] z-[20] h-screen bg-black/50 opacity-100"
-          : "-top-[50vh] h-0 -z-[10] opacity-0"
-      }  overflow-hidden grow absolute transition-all duration-700`}
+      className={`${navState ? "block" : "hidden"} w-full opacity-100 grow h-fit bottom-1 bg-transparent absolute z-50 transition-all`}
     >
       <div
-        className={`${
-          navState ? "top-0" : "-top-full"
-        } transition-all duration-700 absolute w-full -z-20 bg-[#1467A2] pb-3`}
+        className={`transition-none  absolute w-full bg-[#1467A2] pb-3`}
       >
         <ul
           className={`rounded-tl-lg rounded-bl-lg rounded-br-lg md:hidden p-1 justify-center flex flex-col mx-2 bg-white text-black`}
@@ -138,12 +132,6 @@ const NavlistSmall = (props: NavlistSmallProps) => {
                     href={"/profil/pegawai"}
                   >
                     Profil Pegawai
-                  </Link>
-                  <Link
-                    className={navHeader.dropdownList}
-                    href={"/profil/layanan-egov"}
-                  >
-                    Bidang layanan E-Goverment
                   </Link>
                 </ul>
               </div>
