@@ -20,12 +20,14 @@ const NavlistSmall = (props: NavlistSmallProps) => {
     <div
       className={`w-full ${
         navState
-          ? "top-[97%] z-[80] h-screen bg-black/50 opacity-100"
+          ? "top-[97%] z-[20] h-screen bg-black/50 opacity-100"
           : "-top-[50vh] h-0 -z-[10] opacity-0"
       }  overflow-hidden grow absolute transition-all duration-700`}
     >
       <div
-        className={`transition-all duration-700 absolute w-full -z-20 bg-[#1467A2] pb-3`}
+        className={`${
+          navState ? "top-0" : "-top-full"
+        } transition-all duration-700 absolute w-full -z-20 bg-[#1467A2] pb-3`}
       >
         <ul
           className={`rounded-tl-lg rounded-bl-lg rounded-br-lg md:hidden p-1 justify-center flex flex-col mx-2 bg-white text-black`}
