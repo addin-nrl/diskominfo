@@ -34,7 +34,7 @@ const MainCard = ({ image, title, author, date, id }: MainCardProps) => {
       />
       <div className="text-right mt-3">
         <h2 className="text-2xl text-left font-bold mb-3">{title}</h2>
-        <h3 className="text-base font-light">{author}</h3>
+        <h3 className="text-base font-bold text-blue-500">{author}</h3>
         <h3 className="text-base font-light">{date}</h3>
       </div>
     </Link>

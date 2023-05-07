@@ -141,7 +141,7 @@ const NavlistLarge = (props: any) => {
                 className={navHeader.dropdownList}
                 href={"/informasi-publik/rekapitulasi"}
               >
-                Rekapitulasi Permohonan
+                Informasi Rekapitulasi
               </Link>
             </ul>
           </Dropdown>

@@ -183,7 +183,7 @@ const NavlistSmall = ({ navState, setNavState }: NavlistSmallProps) => {
                     className={navHeader.dropdownList}
                     href={"/informasi-publik/rekapitulasi"}
                   >
-                    Rekapitulasi Permohonan
+                    Informasi Rekapitulasi
                   </Link>
                 </ul>
               </div>
