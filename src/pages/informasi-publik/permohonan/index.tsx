@@ -87,8 +87,11 @@ const index = (props: any) => {
               <td className="grid grid-cols-2 text-sm py-2">
                 <div className="flex justify-center">
                   <Link
+                    target="_blank"
                     className="bg-blue-500 hover:bg-blue-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
+                    href={
+                      "https://drive.google.com/file/d/1d8lWJR7NK33iQhVck6ouNiAwyuM3uyKp/view"
+                    }
                   >
                     unduh
                   </Link>
@@ -96,7 +99,7 @@ const index = (props: any) => {
                 <div className="flex justify-center">
                   <Link
                     className="bg-green-500 hover:bg-green-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
+                    href={"/informasi-publik/permohonan/unggah/pip"}
                   >
                     unggah
                   </Link>
@@ -120,8 +123,11 @@ const index = (props: any) => {
               <td className="grid grid-cols-2 text-sm py-2">
                 <div className="flex justify-center">
                   <Link
+                    target="_blank"
                     className="bg-blue-500 hover:bg-blue-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
+                    href={
+                      "https://drive.google.com/file/d/1vdfahhPIFBBY2us-4fymx9o5qc0Pc1hU/view"
+                    }
                   >
                     unduh
                   </Link>
@@ -129,7 +135,7 @@ const index = (props: any) => {
                 <div className="flex justify-center">
                   <Link
                     className="bg-green-500 hover:bg-green-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
+                    href={"/informasi-publik/permohonan/unggah/pkip"}
                   >
                     unggah
                   </Link>

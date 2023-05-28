@@ -30,7 +30,7 @@ const MainModal = (props: MainModalProps) => {
   return (
     <div
       className={`${
-        isOpen ? "opacity-100 z-[1000]" : "opacity-0 h-0"
+        isOpen ? "opacity-100 z-[1000]" : "opacity-0 h-0 -z-[1000]"
       } duration-700 fixed top-0 left-0 bg-black/50  transition-opacity overflow-hidden h-screen w-screen`}
     >
       <div className="absolute top-1/2 right-1/2 translate-x-1/2 lg:w-[950px] w-[93%] max-h-[95vh] overflow-y-auto -translate-y-1/2 bg-white shadow-xl rounded-xl p-6 pt-5 space-y-3">
