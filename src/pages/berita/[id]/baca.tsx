@@ -25,14 +25,13 @@ export const getServerSideProps = async (
   const data = JSON.parse(res).filter((_: berita) => _.id === id);
 
   return {
-    props: { berita: data[0] },
+    props: { berita: data[0], res: JSON.parse(res) },
   };
 };
 
 const Baca = (props: any) => {
   const { id, image, title, author, date, data_berita } = props.berita,
     gambar: any = image?.toString();
-  console.log(props.data);
   return (
     <PageLayouts title={title?.toString()}>
       <ContainerLayout className="!p-0" header={<h2>{title}</h2>}>
@@ -55,15 +54,24 @@ const Baca = (props: any) => {
                 Lihat Juga:
                 <Link
                   className="font-bold ml-2 text-blue-400 hover:text-blue-500 transition-colors"
-                  href={"/"}
+                  href={{
+                    pathname: `/berita/${props.res[4].id}/baca`,
+                    query: {
+                      id: props.res[4].id,
+                      image: props.res[4].image,
+                      title: props.res[4].title,
+                      author: props.res[4].author,
+                      date: props.res[4].date,
+                    },
+                  }}
                 >
-                  Program Tambak dan Pertanian, Pacu Masyarakat Lebih Mandiri
+                  {props.res[4].title}
                 </Link>
               </p>
             </div>
             <div className="indent-0">
               <Link
-                href={"/"}
+                href={"/berita/setiap-saat"}
                 className="bg-blue-500 mx-auto block w-max rounded-lg px-3 py-1 text-white font-semibold"
               >
                 Baca berita terkait lainnya
@@ -72,7 +80,7 @@ const Baca = (props: any) => {
           </div>
           <div className="md:w-[300px] w-full indent-0 relative">
             <h4 className="absolute bottom-full right-0 font-bold text-gray-600 text-base mb-1">
-              {date}
+              {author} - {date}
             </h4>
             <Berita_MiniCard judul="Kategori">
               <ul className="list-inside list-disc">
@@ -91,27 +99,29 @@ const Baca = (props: any) => {
               className="grid gap-3 grid-cols-1"
               judul="Berita Terkini"
             >
-              {[1, 1].map((item, index) => (
+              {props.res.slice(0, 3).map((item: berita, index: number) => (
                 <MainCard
                   key={index}
-                  id="asd8as8x79cv9x7c9v"
-                  image="https://dummyimage.com/300x400/0d7dbd/fffff&text=gambar+berita"
-                  title="Contoh berita serta merta"
-                  author="admin"
-                  date="12 Januari 2023, 10.10"
+                  id={item.id}
+                  image={item.image}
+                  title={item.title}
+                  author={item.author}
+                  date={item.date}
                 />
               ))}
             </Berita_MiniCard>
             <Berita_MiniCard className="flex flex-wrap gap-1" judul="Tags">
-              {[1, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => (
-                <Link
-                  className="bg-gray-300 rounded-lg px-3"
-                  href={"/"}
-                  key={index}
-                >
-                  Taag {index}
-                </Link>
-              ))}
+              {["kota serang", "informatif", "teknologi", "walikota"].map(
+                (item, index) => (
+                  <Link
+                    className="bg-gray-300 rounded-lg px-3 capitalize"
+                    href={"/"}
+                    key={index}
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
             </Berita_MiniCard>
           </div>
         </div>

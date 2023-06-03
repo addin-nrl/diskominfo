@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 interface MainCardProps {
@@ -11,10 +12,12 @@ interface MainCardProps {
 }
 
 const MainCard = ({ image, title, author, date, id }: MainCardProps) => {
+  const router = useRouter();
+  const path = router.pathname.includes("baca") ? "/berita/" : "";
   return (
     <Link
       href={{
-        pathname: `${id}/baca`,
+        pathname: `${path}${id}/baca`,
         query: {
           id: id,
           image: image,
