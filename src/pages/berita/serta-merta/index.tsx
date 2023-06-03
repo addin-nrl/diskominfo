@@ -1,23 +1,41 @@
 import MainCard from "@/components/cards/MainCard";
 import ContainerLayout from "@/components/layouts/ContainerLayout";
 import PageLayouts from "@/components/layouts/PageLayouts";
+import { berita } from "@/interfaces/beritaInterface";
+import { readFile } from "fs/promises";
+import path from "path";
 import React from "react";
 
-const index = (props: any) => {
+export const getServerSideProps = async () => {
+  const dataPath = path.join(
+    process.cwd(),
+    "/src/pages/berita/serta-merta/data-berita.json"
+  );
+  const res = await readFile(dataPath, "utf-8");
+  const data = JSON.parse(res);
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const index = ({ data }: any) => {
   return (
     <PageLayouts title="Berita Serta Merta">
       <ContainerLayout
         header={<h2>berita serta merta</h2>}
         className="grid gap-7 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 !p-0 !m-4"
       >
-        {[1, 1, 1, 1, 1, 1].map((_, index) => (
+        {data.map((_: berita, index: number) => (
           <MainCard
             key={index}
-            id="asd8as8x79cv9x7c9v"
-            image="https://dummyimage.com/300x400/0d7dbd/fffff&text=gambar+berita"
-            title="Contoh berita serta merta"
-            author="admin"
-            date="12 Januari 2023, 10.10"
+            id={_.id}
+            image={_.image}
+            title={_.title}
+            author={_.author}
+            date={_.date}
           />
         ))}
       </ContainerLayout>

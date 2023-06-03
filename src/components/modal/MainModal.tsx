@@ -7,10 +7,12 @@ interface MainModalProps {
   className?: string;
   useTimeout?: boolean;
   timeout?: number;
+  header?: React.ReactNode;
 }
 
 const MainModal = (props: MainModalProps) => {
-  const { isOpen, onClose, children, className, timeout, useTimeout } = props,
+  const { isOpen, onClose, header, children, className, timeout, useTimeout } =
+      props,
     [countdown, setCountdown] = React.useState<number | undefined>(timeout),
     [warning, setWarning] = React.useState<boolean>(false);
 
@@ -36,12 +38,13 @@ const MainModal = (props: MainModalProps) => {
       <div className="absolute top-1/2 right-1/2 translate-x-1/2 lg:w-[950px] w-[93%] max-h-[95vh] overflow-y-auto -translate-y-1/2 bg-white shadow-xl rounded-xl p-6 pt-5 space-y-3">
         <div className="sticky top-0 flex justify-end gap-5">
           <div
-            className={`${
-              warning ? "bg-red-400" : "bg-red-500"
+            className={`${warning ? "bg-red-400" : "bg-red-500"} ${
+              useTimeout ? "block" : "hidden"
             } indent-0 px-4 text-white flex justify-center items-center w-fit transition-colors duration-500 rounded-lg`}
           >
             <p>Kampanye ini akan berakhir dalam {countdown} detik</p>
           </div>
+          {header}
           <button
             className="bg-red-500 text-white rounded-lg aspect-square h-10 flex justify-center items-center active:scale-95 hover:scale-110 hover:bg-red-600 transition-all duration-300 group/exit"
             onClick={() => onClose(!isOpen)}

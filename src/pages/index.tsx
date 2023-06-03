@@ -41,7 +41,7 @@ export default function Home() {
               height={400}
               className="h-full rounded-lg bg-[#1467A2] float-left"
             />
-            <div className="flex gap-4 flex-col">
+            <div className="flex gap-4 flex-col indent-0">
               <p>Assalamu{"'"}alaikum Wr. Wb.,</p>
               <p>salam sejahtera, salam kebajikan, homsuatiyastu, namebudaye</p>
               <p>

@@ -1,11 +1,50 @@
 import ContainerLayout from "@/components/layouts/ContainerLayout";
 import PageLayouts from "@/components/layouts/PageLayouts";
+import MainModal from "@/components/modal/MainModal";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const index = (props: any) => {
+const Index = (props: any) => {
+  const [OpenModalFPIP, setOpenModalFPIP] = React.useState<boolean>(false);
+  const [OpenModalFPKIP, setOpenModalFPKIP] = React.useState<boolean>(false);
+
   return (
     <PageLayouts title="Informasi Permohonan">
+      <MainModal
+        isOpen={OpenModalFPIP}
+        onClose={(data) => setOpenModalFPIP(data)}
+        header={
+          <h2 className="text-start indent-0 capitalize w-full text-2xl font-bold">
+            alur Permohonan Informasi Publik
+          </h2>
+        }
+      >
+        <Image
+          alt="Gambar Alur FPIP"
+          src={"/assets/images/alur-permohonan.jpg"}
+          width={1000}
+          height={1000}
+          className="w-full object-cover rounded-xl"
+        />
+      </MainModal>
+      <MainModal
+        isOpen={OpenModalFPKIP}
+        onClose={(data) => setOpenModalFPKIP(data)}
+        header={
+          <h2 className="text-start w-full indent-0 text-2xl font-bold capitalize">
+            alur permohonan keberatan informasi publik
+          </h2>
+        }
+      >
+        <Image
+          alt="Gambar Alur FPIP"
+          src={"/assets/images/alur-keberatan.jpg"}
+          width={1000}
+          height={1000}
+          className="w-full object-cover rounded-xl"
+        />
+      </MainModal>
       <ContainerLayout background header={<h2>Informasi Permohonan</h2>}>
         <table className="table-fixed w-full border-collapse border-2 border-blue-400">
           <thead>
@@ -35,12 +74,12 @@ const index = (props: any) => {
               </td>
               <td className="grid grid-cols-2 text-sm py-2">
                 <div className="flex justify-center">
-                  <Link
+                  <button
+                    onClick={() => setOpenModalFPIP(!OpenModalFPIP)}
                     className="bg-blue-500 hover:bg-blue-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
                   >
                     unduh
-                  </Link>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -61,12 +100,12 @@ const index = (props: any) => {
               </td>
               <td className="grid grid-cols-2 text-sm py-2">
                 <div className="flex justify-center">
-                  <Link
+                  <button
+                    onClick={() => setOpenModalFPKIP(!OpenModalFPKIP)}
                     className="bg-blue-500 hover:bg-blue-700 transition-colors text-white px-3 rounded-md uppercase font-bold"
-                    href={"/"}
                   >
                     unduh
-                  </Link>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -149,4 +188,4 @@ const index = (props: any) => {
   );
 };
 
-export default index;
+export default Index;

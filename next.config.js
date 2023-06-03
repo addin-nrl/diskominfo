@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "dummyimage.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "serangkota.go.id",
+        port: "",
+      },
     ],
   },
 };

@@ -2,16 +2,37 @@ import Berita_MiniCard from "@/components/cards/Berita_MiniCard";
 import MainCard from "@/components/cards/MainCard";
 import ContainerLayout from "@/components/layouts/ContainerLayout";
 import PageLayouts from "@/components/layouts/PageLayouts";
+import { berita } from "@/interfaces/beritaInterface";
+import { readFile } from "fs/promises";
+import { GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import path from "path";
 import React from "react";
 
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const { id } = context.query;
+  const beritaType = id?.includes("SS") ? "setiap-saat" : "serta-merta";
+
+  const dataPath = path.join(
+    process.cwd(),
+    `/src/pages/berita/${beritaType}/data-berita.json`
+  );
+  const res = await readFile(dataPath, "utf-8");
+  const data = JSON.parse(res).filter((_: berita) => _.id === id);
+
+  return {
+    props: { berita: data[0] },
+  };
+};
+
 const Baca = (props: any) => {
-  const { query } = useRouter(),
-    { id, image, title, author, date } = query,
+  const { id, image, title, author, date, data_berita } = props.berita,
     gambar: any = image?.toString();
-  console.log(query);
+  console.log(props.data);
   return (
     <PageLayouts title={title?.toString()}>
       <ContainerLayout className="!p-0" header={<h2>{title}</h2>}>
@@ -25,39 +46,9 @@ const Baca = (props: any) => {
               height={400}
             />
             <div className="bg-black/5 space-y-2 box-content rounded-xl px-5 py-3 max-w-prose backdrop-blur-sm">
-              <p>
-                SERANG-Relawan Gardu Ganjar menggalakkan program usaha tambak
-                ikan dan pertanian bagi masyarakat di sejumlah kecamatan di
-                Banten. Program peningkatan ekonomi desa yang dilakukan warga
-                binaan Gardu Ganjar ini telah berjalan sejak Desember 2022.
-              </p>
-              <p>
-                Program itu tersebar di Kabupaten Lebak, Kabupaten Pandeglang,
-                Serang dan wilayah lainnya di Banten. Usaha tambak ikan yang
-                diberikan berupa lele, mas, dan nila.
-              </p>
-              <p>
-                Andre, salah satu perwakilan dari Gardu Ganjar mengatakan
-                program tambak ikan dan pertanian itu dilakukan di Kecamatan
-                Kopo dan Kecamatan Jawilan, Kabupaten Serang. {`"`}Kemudian
-                dilakukan juga di Kecamatan Maja, Kabupaten Lebak,{`"`} ujar dia
-                dalam siaran persnya, Kamis (16/2)
-              </p>
-              <p>
-                Menurut dia, usaha tambak ikan dan pertanian itu diharapkan bisa
-                memenuhi kebutuhan warga sehari-hari. {`"`}Harapan kami, warga
-                bisa menjadi lebih mandiri dengan adanya pertambakan ikan dan
-                pertanian ini,{`"`} ujarnya. Untuk lahan pertanian, relawan
-                pendukung Ganjar Pranowo itu membagikan bibit cabai serta timun
-                suri secara gratis. Kini, pertanian yang dijalankan warga sudah
-                berkembang dan menunggu hasil panen beberapa pekan ke depan.
-              </p>
-              <p>
-                Asep (34), salah satu warga yang menjadi binaan Gardu Ganjar
-                mengaku sangat terbantu dengan adanya program ini. {`"`}Dengan
-                adanya usaha tambak ikan dan pertanian, warga bisa mandiri dan
-                kuat secara ekonomi,{`"`} katanya.-(Penulis : {author})
-              </p>
+              {data_berita?.map((item: string, index: number) => (
+                <p key={index}>{item}</p>
+              ))}
             </div>
             <div className="bg-black/5 indent-0 box-content rounded-xl px-5 py-3 max-w-prose backdrop-blur-sm">
               <p>

@@ -10,42 +10,42 @@ export interface AplikasiCarousel extends Carousel {
 export const aplikasiCarousel: AplikasiCarousel[] = [
   {
     title: "Call 112",
-    link: "/",
+    link: "tel:112",
     image: "/assets/aplikasi/call-112.svg",
   },
   {
     title: "Gelati",
-    link: "/",
+    link: "https://gelati.serangkota.go.id/",
     image: "/assets/aplikasi/gelati.svg",
   },
   {
     title: "Info Sembako",
-    link: "/",
+    link: "https://sembako.serangkota.go.id/",
     image: "/assets/aplikasi/info-sembako.svg",
   },
   {
     title: "jdih kora serang",
-    link: "/",
+    link: "https://jdih.serangkota.go.id/",
     image: "/assets/aplikasi/jdih-kota-serang.svg",
   },
   {
     title: "kependudukan",
-    link: "/",
+    link: "https://play.google.com/store/apps/details?id=com.wulan.smartdukcapil&pli=1",
     image: "/assets/aplikasi/kependudukan.svg",
   },
   {
     title: "ppid kota serang",
-    link: "/",
+    link: "https://ppid.serangkota.go.id/",
     image: "/assets/aplikasi/ppid-kota-serang.svg",
   },
   {
     title: "ragem",
-    link: "/",
+    link: "https://ragem.serangkota.go.id/",
     image: "/assets/aplikasi/ragem.svg",
   },
   {
     title: "sikondang",
-    link: "/",
+    link: "https://sikondang.serangkota.go.id/",
     image: "/assets/aplikasi/sikondang.svg",
   },
 ];
