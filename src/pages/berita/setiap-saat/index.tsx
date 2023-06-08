@@ -35,6 +35,7 @@ const index = ({ data }: any) => {
             image={data.image}
             title={data.title}
             author={data.author}
+            links={""}
             date={data.date}
           />
         ))}

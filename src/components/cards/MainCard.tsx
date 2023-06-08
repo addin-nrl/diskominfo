@@ -9,23 +9,37 @@ interface MainCardProps {
   title: string;
   author?: string;
   date?: string;
+  isGallery?: boolean;
+  links: string;
 }
 
-const MainCard = ({ image, title, author, date, id }: MainCardProps) => {
+const MainCard = ({
+  image,
+  title,
+  author,
+  date,
+  id,
+  isGallery = false,
+  links,
+}: MainCardProps) => {
   const router = useRouter();
   const path = router.pathname.includes("baca") ? "/berita/" : "";
   return (
     <Link
-      href={{
-        pathname: `${path}${id}/baca`,
-        query: {
-          id: id,
-          image: image,
-          title: title,
-          author: author,
-          date: date,
-        },
-      }}
+      href={
+        isGallery
+          ? links
+          : {
+              pathname: `${path}${id}/baca`,
+              query: {
+                id: id,
+                image: image,
+                title: title,
+                author: author,
+                date: date,
+              },
+            }
+      }
       className="bg-white/10 rounded-2xl backdrop-blur-md hover:shadow-xl shadow-md transition-shadow duration-500 p-5 col-span-1"
     >
       <Image

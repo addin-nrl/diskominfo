@@ -101,6 +101,7 @@ const Baca = (props: any) => {
             >
               {props.res.slice(0, 3).map((item: berita, index: number) => (
                 <MainCard
+                  links={""}
                   key={index}
                   id={item.id}
                   image={item.image}

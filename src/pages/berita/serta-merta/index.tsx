@@ -36,6 +36,7 @@ const index = ({ data }: any) => {
             title={_.title}
             author={_.author}
             date={_.date}
+            links={""}
           />
         ))}
       </ContainerLayout>
