@@ -13,6 +13,21 @@ const nextConfig = {
         hostname: "serangkota.go.id",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.youtube.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.instagram.com",
+        port: "",
+      },
     ],
   },
 };

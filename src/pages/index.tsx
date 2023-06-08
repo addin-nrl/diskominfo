@@ -12,6 +12,61 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import smartcity from "../../public/assets/images/smartcity.png";
 
+const instagramData = [
+  {
+    id: 1,
+    image: "https://www.instagram.com/p/Cs1F1QnLHui/media/?size=l",
+    link: "https://www.instagram.com/p/Cs1F1QnLHui/",
+  },
+  {
+    id: 2,
+    image: "https://www.instagram.com/p/Css_sn2Lcpv/media/?size=l",
+    link: "https://www.instagram.com/p/Css_sn2Lcpv/",
+  },
+  {
+    id: 3,
+    image: "https://www.instagram.com/p/CsVGdu_LTSV/media/?size=l",
+    link: "https://www.instagram.com/p/CsVGdu_LTSV/",
+  },
+  {
+    id: 4,
+    image: "https://www.instagram.com/p/CpnQ0O4ysId/media/?size=l",
+    link: "https://www.instagram.com/p/CpnQ0O4ysId/",
+  },
+  {
+    id: 5,
+    image: "https://www.instagram.com/p/CtL85rISswi/media/?size=l",
+    link: "https://www.instagram.com/p/CtL85rISswi/",
+  },
+];
+
+const youtubeData = [
+  {
+    id: 1,
+    link: "https://www.youtube.com/watch?v=Gx7weHIeHCY",
+    image: "https://img.youtube.com/vi/Gx7weHIeHCY/sddefault.jpg",
+  },
+  {
+    id: 2,
+    link: "https://www.youtube.com/watch?v=6we4iXtNuiY",
+    image: "https://img.youtube.com/vi/6we4iXtNuiY/sddefault.jpg",
+  },
+  {
+    id: 3,
+    link: "https://www.youtube.com/watch?v=3HTGUunXCyc",
+    image: "https://img.youtube.com/vi/3HTGUunXCyc/sddefault.jpg",
+  },
+  {
+    id: 4,
+    link: "https://www.youtube.com/watch?v=KpLdiyVD_U4",
+    image: "https://img.youtube.com/vi/KpLdiyVD_U4/sddefault.jpg",
+  },
+  {
+    id: 5,
+    link: "https://www.youtube.com/watch?v=QwP76quae98",
+    image: "https://img.youtube.com/vi/QwP76quae98/sddefault.jpg",
+  },
+];
 export default function Home() {
   const [isOpen, setIsOpen] = React.useState(true);
   return (
@@ -162,7 +217,14 @@ export default function Home() {
           <div className="mt-5 relative">
             <div className="flex justify-between items-center">
               <h2 className="md:text-xl text-base font-light">
-                Instagram: @diskominfokotaserang
+                Instagram:{" "}
+                <Link
+                  className="hover:text-blue-400 transition-colors hover:underline"
+                  href="https://www.instagram.com/diskominfokotaserang/"
+                  target="_blank"
+                >
+                  @diskominfokotaserang
+                </Link>
               </h2>
             </div>
             <Carousel
@@ -183,18 +245,22 @@ export default function Home() {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => {
+              {instagramData.map(({ id, image, link }, index) => {
                 return (
                   <div key={index} className="p-5">
-                    <div className="flex gap-5 bg-black/40 rounded-xl">
+                    <Link
+                      href={link}
+                      target="_blank"
+                      className="flex gap-5 bg-black/40 rounded-xl"
+                    >
                       <Image
-                        src="/"
+                        src={image}
                         alt={`Gambar ${index}`}
                         height={250}
                         width={400}
                         className="bg-black/40 rounded-lg grow h-full object-cover"
                       />
-                    </div>
+                    </Link>
                   </div>
                 );
               })}
@@ -204,7 +270,14 @@ export default function Home() {
           <div className="mt-5 relative">
             <div className="flex justify-between items-center">
               <h2 className="md:text-xl text-base font-light">
-                YouTube: Diskominfo kota Serang
+                YouTube:
+                <Link
+                  className="hover:text-blue-400 transition-colors hover:underline"
+                  href="https://www.youtube.com/@diskominfokotaserang24/videos"
+                  target="_blank"
+                >
+                  Diskominfo kota Serang
+                </Link>
               </h2>
             </div>
             <Carousel
@@ -225,18 +298,22 @@ export default function Home() {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => {
+              {youtubeData.map(({ id, image, link }, index) => {
                 return (
                   <div key={index} className="p-5">
-                    <div className="flex gap-5 bg-black/40 rounded-xl">
+                    <Link
+                      href={link}
+                      target="_blank"
+                      className="flex gap-5 bg-black/40 rounded-xl"
+                    >
                       <Image
-                        src="/"
+                        src={image}
                         alt={`Gambar ${index}`}
                         height={250}
                         width={400}
                         className="bg-black/40 rounded-lg grow h-full object-cover"
                       />
-                    </div>
+                    </Link>
                   </div>
                 );
               })}
