@@ -43,7 +43,7 @@ const NavHeader = (props: any) => {
             <input
               placeholder="Cari sesuatu"
               id=""
-              className="md:focus:w-full w-full duration-300 md:w-[115px] h-11 px-3 focus:pr-8 rounded-lg peer/search focus:shadow-lg text-base font-light outline-none transition-all"
+              className="w-full duration-300 h-11 px-3 focus:pr-8 rounded-lg peer/search focus:shadow-lg text-base font-light outline-none transition-all"
               type="text"
             />
             <button className="absolute right-1 h-[80%] md:p-0 px-2 aspect-square top-1/2 -translate-y-1/2 rounded-md shadow-lg bg-[#1467A2] text-white flex justify-center items-center transition-all duration-150 opacity-100 md:peer-focus/search:opacity-100 md:peer-focus/search:delay-150 md:opacity-0">
