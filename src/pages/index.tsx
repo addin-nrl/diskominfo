@@ -256,7 +256,7 @@ export default function Home() {
                       <Image
                         src={image}
                         alt={`Gambar ${index}`}
-                        height={250}
+                        height={600}
                         width={400}
                         className="bg-black/40 rounded-lg grow h-full object-cover"
                       />
