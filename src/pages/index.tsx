@@ -15,27 +15,32 @@ import smartcity from "../../public/assets/images/smartcity.png";
 const instagramData = [
   {
     id: 1,
-    image: "https://www.instagram.com/p/Cs1F1QnLHui/media/?size=l",
+    image:
+      "https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-15/349497162_249806547654068_2592153820142184763_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=NVOMEyiSZQcAX-zzbf1&edm=AGenrX8BAAAA&ccb=7-5&oh=00_AfB3ehs8GE-qxKSvhdtIXAPuZOhtG-1qk_zzhcslJMhiUw&oe=64883459&_nc_sid=39c49a",
     link: "https://www.instagram.com/p/Cs1F1QnLHui/",
   },
   {
     id: 2,
-    image: "https://www.instagram.com/p/Css_sn2Lcpv/media/?size=l",
+    image:
+      "https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-15/348686271_269434868778750_1479292199897278495_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=zbKyllppb2gAX8lkMu_&edm=AGenrX8BAAAA&ccb=7-5&oh=00_AfCFIJCbDh3gDvPudFgwuqnIpNpOGkDRp7yxPZ3jMGagHA&oe=64874E42&_nc_sid=39c49a",
     link: "https://www.instagram.com/p/Css_sn2Lcpv/",
   },
   {
     id: 3,
-    image: "https://www.instagram.com/p/CsVGdu_LTSV/media/?size=l",
+    image:
+      "https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-15/347517178_1336309853624097_4322644287288577541_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=VKBeL44TUroAX_ECdAp&edm=AGenrX8BAAAA&ccb=7-5&oh=00_AfBQPOPKbqwUe2onFY2fmWiyxV5joLe8QB7f91Fr0wJFrA&oe=6488363D&_nc_sid=39c49a",
     link: "https://www.instagram.com/p/CsVGdu_LTSV/",
   },
   {
     id: 4,
-    image: "https://www.instagram.com/p/CpnQ0O4ysId/media/?size=l",
+    image:
+      "https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-15/333324759_220834610435637_5437112448447501339_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=axwPCwBPLxAAX9bDoJ2&edm=AGenrX8BAAAA&ccb=7-5&oh=00_AfDUBNah3Shd1hx1oMIVD8xNKgWdd1MtLYK1_I0djHHpzQ&oe=6487BD57&_nc_sid=39c49a",
     link: "https://www.instagram.com/p/CpnQ0O4ysId/",
   },
   {
     id: 5,
-    image: "https://www.instagram.com/p/CtL85rISswi/media/?size=l",
+    image:
+      "https://instagram.fjog3-1.fna.fbcdn.net/v/t51.2885-15/351443499_272106955352729_9133517679153030155_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=instagram.fjog3-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=M0jmY-tPNIAAX_cNYkw&edm=AGenrX8BAAAA&ccb=7-5&oh=00_AfCuL17Q_uM45eV7xFgzT1IzaPiBmCQpVdWAcYLrJYYedA&oe=6487EA2C&_nc_sid=39c49a",
     link: "https://www.instagram.com/p/CtL85rISswi/",
   },
 ];
@@ -256,9 +261,9 @@ export default function Home() {
                       <Image
                         src={image}
                         alt={`Gambar ${index}`}
-                        height={600}
+                        height={400}
                         width={400}
-                        className="bg-black/40 rounded-lg grow h-full object-cover"
+                        className="bg-black/40 rounded-lg grow w-full object-cover"
                       />
                     </Link>
                   </div>
